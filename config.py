@@ -1,3 +1,4 @@
+import os
 DEBUGING = True
 
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
