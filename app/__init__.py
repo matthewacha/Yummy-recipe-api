@@ -7,4 +7,5 @@ app.config.from_file('config')
 db=SQLAlchemy(app)
 db.create_all()
 
-from app import views
+from app.users import users as users_blueprint
+app.register_blueprint(users_blueprint)
