@@ -6,10 +6,11 @@ from .. import db
 @users.route('/api/user/signup', methods=['POST'])
 def signup():
     json_data = request.json
-    user = User(first_name = json_data['first_name'],\
-                 last_name = json_data['last_name'],\
-                 email = json_data['email'],\
-                 password = json_data['password'])
+    user = User(first_name = json_data['first_name'], last_name = json_data['last_name'],email = json_data['email'], password = json_data['password'])
+    user.first_name = json_data['first_name']
+    user.last_name = json_data['last_name']
+    user.email = json_data['email']
+    user.password = json_data['password']
     try:
         db.session.add(user)
         db.session.commit()
