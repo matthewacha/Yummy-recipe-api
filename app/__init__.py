@@ -13,5 +13,5 @@ login_manager.init_app(app)
 
 from app.users import users as users_blueprint
 app.register_blueprint(users_blueprint)
-from app.recipes import recipes as recipe_blueprint
+from app.recipes import recipes as recipes_blueprint
 app.register_blueprint(recipes_blueprint)
