@@ -5,4 +5,4 @@ cache: pip
 install:
   - pip install -r requirements.txt
 script:
-  - coverage run test_yumRecipes.py && coveralls 
+  - coverage run tests.py && coveralls 
