@@ -7,4 +7,4 @@ install:
   - pip install coveralls
 # command to run tests
 script:
-  -coverage run tests.py
+  -py.test tests.py
