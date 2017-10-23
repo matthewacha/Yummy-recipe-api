@@ -63,7 +63,7 @@ To get users
   
 To get a single user
   
-  endpoint = http://127.0.0.1:5000/api/user/<email>
+  endpoint = http://127.0.0.1:5000/api/user/"<email>"
   
   method= GET
   
@@ -93,7 +93,7 @@ To view recipes
   
 To view single recipe
   
-  endpoint = http://127.0.0.1:5000/api/recipe/<name>
+  endpoint = http://127.0.0.1:5000/api/recipe/"<name>"
   
   method= POST
   
@@ -101,7 +101,7 @@ To view single recipe
   
 To edit single recipe
   
-  endpoint = http://127.0.0.1:5000/api/recipe/<name>
+  endpoint = http://127.0.0.1:5000/api/recipe/"<name>"
   
   method= PUT
   
@@ -111,7 +111,7 @@ To edit single recipe
   
 To delete recipe
   
-  endpoint = http://127.0.0.1:5000/api/recipe/<name>
+  endpoint = http://127.0.0.1:5000/api/recipe/"<name>"
   
   method= DELETE
 
