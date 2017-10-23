@@ -1,6 +1,16 @@
+import os
 import unittest
+import config
 import json
 from app import app, db
+
+class TestConfig(unittest.TestCase):
+    def test_config(self):
+       self.assertTrue(config.DEBUGING) 
+       self.assertTrue(config.BASEDIR == os.path.abspath(os.path.dirname(__file__)))
+       BASEDIR = os.path.abspath(os.path.dirname(__file__))
+       self.assertTrue(config.SQLALCHEMY_DATABASE_URI =='sqlite:///'+ os.path.join(BASEDIR, 'db.db'))
+       self.assertFalse(config.SQLALCHEMY_TRACK_MODIFICATIONS)
 
 class TestsUsers(unittest.TestCase):
     def setUp(self):
@@ -57,7 +67,7 @@ class TestsUsers(unittest.TestCase):
         user2 = [user for user in data['users'] if user['first_name']=='James']
         self.assertEqual(response.status_code, 200)
         self.assertIn(u'Lames', user1[0]['first_name'])
-        self.assertIn(u'Clark', user2[0]['last_name'])
+        self.assertIn(u'James', user2[0]['first_name'])
         
 
 

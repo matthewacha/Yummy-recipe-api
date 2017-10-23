@@ -1,8 +1,8 @@
-from flask import Flask, jsonify, request, session, make_response
-from app.models import Recipe
-from app.users.views import token_required
-from . import recipes
-from .. import db, models
+from flask import Flask, jsonify, request, session, make_response#pragma:no cover
+from app.models import Recipe#pragma:no cover
+from app.users.views import token_required#pragma:no cover
+from . import recipes#pragma:no cover
+from .. import db, models#pragma:no cover
 
 @recipes.route('/api/recipe', methods = ['POST'])
 @token_required
@@ -50,8 +50,6 @@ def edit_recipe(current_user, name):
     recipe = Recipe.query.filter_by(name=json_data['name']).first()
     if not recipe:
         return jsonify({"Message":"Recipe non exitent"}), 401
-
-    #recipe=Recipe(json_data['new_name'],json_data['new_description'])
 
     recipe = Recipe(name = json_data['new_name'],
                     description = json_data['new_description'])

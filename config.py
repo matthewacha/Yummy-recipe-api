@@ -1,4 +1,4 @@
-import os
+import os#pragma:no cover
 DEBUGING = True
 
 BASEDIR = os.path.abspath(os.path.dirname(__file__))

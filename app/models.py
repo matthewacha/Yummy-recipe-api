@@ -1,7 +1,7 @@
-from sqlalchemy import Column, ForeignKey, Integer, String
-from sqlalchemy import create_engine
-from sqlalchemy.orm import relationship
-from app import db
+from sqlalchemy import Column, ForeignKey, Integer, String#pragma:no cover
+from sqlalchemy import create_engine#pragma:no cover
+from sqlalchemy.orm import relationship#pragma:no cover
+from app import db#pragma:no cover
 
 
 class User(db.Model):
@@ -13,11 +13,11 @@ class User(db.Model):
     password = db.Column(db.String(300))
     category_id = db.Column(db.Integer, db.ForeignKey('recipes.id'))
     def __init__(self, first_name, last_name, email, password):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.email = email
-        self.password = password
-        db.create_all()   
+        self.first_name = first_name#pragma:no cover
+        self.last_name = last_name#pragma:no cover
+        self.email = email#pragma:no cover
+        self.password = password#pragma:no cover
+        db.create_all()   #pragma:no cover
     
 class Recipe(db.Model):
     __tablename__ = 'recipes'
@@ -27,10 +27,8 @@ class Recipe(db.Model):
     user = db.relationship('User', backref='recipes',
                                  lazy='dynamic')
     def __init__(self, name, description):
-        self.name = name
-        self.description = description
-        db.create_all()
-    #create engine to store data in local non-persistent database directory   
+        self.name = name#pragma:no cover
+        self.description = description#pragma:no cover
+        db.create_all()#pragma:no cover
 
-#db.Model.metadata.bind = create_engine('sqlite:///db.db')
 

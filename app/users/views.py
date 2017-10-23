@@ -1,12 +1,12 @@
-import os
-import jwt
-import datetime
-from flask import Flask, jsonify, request, session, make_response
-from werkzeug.security import generate_password_hash, check_password_hash
-from functools import wraps
-from . import users
-from app import app, db, models
-from json import dumps
+import os#pragma:no cover
+import jwt#pragma:no cover
+import datetime#pragma:no cover
+from flask import Flask, jsonify, request, session, make_response#pragma:no cover
+from werkzeug.security import generate_password_hash, check_password_hash#pragma:no cover
+from functools import wraps#pragma:no cover
+from . import users#pragma:no cover
+from app import app, db, models#pragma:no cover
+from json import dumps#pragma:no cover
 
 def token_required(funct):
     @wraps(funct)
