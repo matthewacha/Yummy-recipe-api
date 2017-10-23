@@ -17,20 +17,20 @@ class User(db.Model):
         self.last_name = last_name
         self.email = email
         self.password = password
-        
+        db.create_all()   
     
 class Recipe(db.Model):
     __tablename__ = 'recipes'
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(60), nullable=False)
-    description = db.Column(db.String(200), nullable=False)
+    name = db.Column(db.String(60), nullable=False, unique=True)
+    description = db.Column(db.String(1000), nullable=False)
     user = db.relationship('User', backref='recipes',
                                  lazy='dynamic')
     def __init__(self, name, description):
         self.name = name
         self.description = description
-
+        db.create_all()
     #create engine to store data in local non-persistent database directory   
 
-db.Model.metadata.bind = create_engine('sqlite:///api_db.db')
-db.create_all()
+#db.Model.metadata.bind = create_engine('sqlite:///db.db')
+
