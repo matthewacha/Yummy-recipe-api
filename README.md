@@ -1,5 +1,6 @@
 # Yummy-recipe-api
-[![Build Status](https://travis-ci.org/matthewacha/Yummy-recipe-api.svg?branch=developer)](https://travis-ci.org/matthewacha/Yummy-recipe-api)
+[![Build Status](https://travis-ci.org/matthewacha/Yummy-recipe-api.svg?branch=developer)](https://travis-ci.org/matthewacha/Yummy-recipe-api) [![Coverage Status](https://coveralls.io/repos/github/matthewacha/Yummy-recipe-api/badge.svg?branch=developer)](https://coveralls.io/github/matthewacha/Yummy-recipe-api?branch=developer)
+
 API for your recipes
 Introduction
 ============
