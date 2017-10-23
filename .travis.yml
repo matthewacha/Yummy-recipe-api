@@ -1,9 +1,8 @@
 language: python
 python:
   - "2.7"
-# command to install dependencies
+cache: pip
 install:
   - pip install -r requirements.txt
-# command to run tests
 script:
-  - py.test tests.py
+  - coverage run test_yumRecipes.py && coveralls 
